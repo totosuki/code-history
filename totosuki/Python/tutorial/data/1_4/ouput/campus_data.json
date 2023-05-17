@@ -1,0 +1,42 @@
+{
+  "Yoyogi": {
+    "PLACE": "Tokyo",
+    "NLABO": true,
+    "Password": "IWobJIg5"
+  },
+  "Yokohama": {
+    "PLACE": "Kanagawa",
+    "NLABO": true,
+    "Password": "sqpfQCXX"
+  },
+  "Omiya": {
+    "PLACE": "Saitama",
+    "NLABO": true,
+    "Password": "dpSGLgMw"
+  },
+  "Ochanomizu": {
+    "PLACE": "Tokyo",
+    "NLABO": false,
+    "Password": "NDgPS2cZ"
+  },
+  "Chiba": {
+    "PLACE": "Chiba",
+    "NLABO": false,
+    "Password": "8Fm8fH4P"
+  },
+  "Tachikawa": {
+    "PLACE": "Tokyo",
+    "NLABO": false,
+    "Password": "OPkSOBJe"
+  },
+  "Kashiwa": {
+    "PLACE": "Chiba",
+    "NLABO": false,
+    "Password": "1Dq97vd6"
+  },
+  "Sendai": {
+    "PLACE": "Miyagi",
+    "NLABO": false,
+    "Password": "Ug0XG7Qg"
+  }
+}

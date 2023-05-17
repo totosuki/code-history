@@ -1,0 +1,23 @@
+{
+    "東京": {
+        "weather": "晴れ",
+        "temperature": [
+            22,
+            26
+        ]
+    },
+    "大坂": {
+        "weather": "曇り",
+        "temperature": [
+            21,
+            26
+        ]
+    },
+    "名古屋": {
+        "weather": "雨",
+        "temperature": [
+            20,
+            22
+        ]
+    }
+}
