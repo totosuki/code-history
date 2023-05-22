@@ -3,6 +3,10 @@
 
 from inputter import inp
 
+class Event:
+    def __init__(self, start, end, cost) -> None:
+        self.start = s
+
 # 利用個数, すぬけプライムの定価
 N, C = map(int, inp().split(" "))
 
