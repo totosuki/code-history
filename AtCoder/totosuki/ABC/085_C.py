@@ -1,12 +1,14 @@
 N, Y = map(int, input().split())
+collect = False
 
-#N枚を10000, 5000, 1000の３つのループ
-for n_10000 in range(N + 1):
-  for n_5000 in range((N - n_10000) + 1):
-    for n_1000 in range((N - n_10000 - n_5000) + 1):
-      print(n_10000)
-      print(n_5000)
-      print(n_1000)
+for i in range(N + 1):
+  for j in range((N - i) + 1):
+    total = (i*10000) + (j*5000) + ((N-i-j)*1000)
+    if (i + j + (N - i - j)) == N and total == Y:
+      print(f"{i} {j} {N - i - j}")
+      collect = True
       break
+  if collect:
     break
-  break
+if not collect:
+  print("-1 -1 -1")
