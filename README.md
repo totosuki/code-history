@@ -28,3 +28,21 @@ Cloneしたローカルリポジトリに、アーカイブ化したいファイ
 - 個人情報は乗らないように気をつけよう。(絶対パスやトークン、メールアドレスなど)
 - パスが入ってるコードは`path/to/hoge.csv`などに変更するの推奨。
 - `.ipynb`は可能な限り出力結果を消してからアーカイブ化して下さい。(出力結果によってはファイルサイズやばくなるよ)
+## その他のフォルダ
+### OctoMouse
+マウスやキーボードの入力数などが分かるアプリ[OctoMouse](https://github.com/KonsomeJona/OctoMouse)のcsvデータ出力をまとめたフォルダ。
+### AtCoder
+競技プログラミングサイト[AtCoder](https://atcoder.jp/home)のコードをまとめたフォルダ。<br><br>
+以下は推奨ディレクトリ構造
+- AtCoder
+  - takahashi
+    - ABC
+      - 065_A.py
+      - 301_F.py
+    - ARC
+      - 072_D.py
+    - etc
+  - snuke(???)
+    - AGC
+      - 053_F.py
+      - 060_D.py
