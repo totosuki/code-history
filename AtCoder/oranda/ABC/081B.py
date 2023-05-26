@@ -1,6 +1,6 @@
 n = int(input())
 a = list(map(int,input().split()))
-count = None
+count = 0
 point = True
 
 while point:
@@ -9,25 +9,9 @@ while point:
             a[i] = a[i]/2
         else:
             point = False
-    count =+ 1
-
+    count += 1
+count -= 1
 print(count)
-
-    
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # n = int(input())
 # a = list(map(int,list(input().split())))
