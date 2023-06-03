@@ -1,0 +1,1 @@
+[print(n[:3]+"0"*(len(n)-3)) for n in [input()]]
