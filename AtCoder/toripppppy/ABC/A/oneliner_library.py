@@ -2,6 +2,7 @@
 
 # 入力が一列、単体
 [print(s) for s in [input()]]
+[print(n) for n in [int(input())]]
 
 # 入力が一列、複数（かつint）
 [print(l) for l in [list(map(int, input().split()))]]

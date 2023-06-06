@@ -1,0 +1,1 @@
+[print(max(l)) for l in [list(map(int, input().split()))]]

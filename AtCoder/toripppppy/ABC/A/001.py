@@ -1,0 +1,1 @@
+[print(l[0] - l[1]) for l in [[int(input()) for i in range(2)]]]
