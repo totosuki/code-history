@@ -1,0 +1,1 @@
+[print(l[2]//min(l[0], l[1])) for l in [list(map(int, input().split()))]]

@@ -1,0 +1,1 @@
+[print("Better" if l[0] < l[1] else "Worse") for l in [list(map(int, input().split()))]]
