@@ -13,3 +13,8 @@
 
 [print(l) for l in [[int(input()) for _ in range(2)]]]
 [print(l) for l in [[input() for _ in range(2)]]]
+
+
+map(int, input().split())
+list(map(int, input().split()))
+[list(map(int, input().split()))]

@@ -1,0 +1,1 @@
+[print((sum(set(l))*2 if len(set(l)) == 2 else sum(set(l))*4) - sum(l)) for l in [list(map(int, input().split()))]]
