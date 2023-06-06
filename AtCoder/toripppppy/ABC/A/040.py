@@ -1,0 +1,1 @@
+[print(l[1]-1 if l[1] <= l[0]//2 else l[0] - l[1]) for l in [list(map(int, input().split()))]]
