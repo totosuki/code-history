@@ -1,0 +1,1 @@
+[[print(sorted(l, reverse=True).index(s) + 1) for s in l] for l in [[int(input()) for _ in range(3)]]]

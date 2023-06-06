@@ -1,0 +1,1 @@
+[print(sorted(l)[1]) for l in [list(map(int, input().split()))]]

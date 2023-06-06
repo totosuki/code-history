@@ -1,0 +1,1 @@
+[print("YES" if l[0] % l[1] == 0 else "NO") for l in [list(map(int, input().split()))]]

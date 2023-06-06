@@ -1,0 +1,1 @@
+[print(l[0] if len(l[0]) > len(l[1]) else l[1]) for l in [[input() for _ in range(2)]]]

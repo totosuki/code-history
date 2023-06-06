@@ -1,0 +1,1 @@
+[print(["ABC","chokudai"][n-1]) for n in [int(input())]]

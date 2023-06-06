@@ -1,0 +1,1 @@
+print(list("ABCDE").index(input()) + 1)
