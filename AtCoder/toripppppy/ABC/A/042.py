@@ -1,0 +1,1 @@
+[print("YES" if sum(l) == 17 else "NO") for l in [list(map(int, input().split()))]]

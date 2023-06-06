@@ -1,0 +1,1 @@
+[print(f"A{l[1][0]}C") for l in [input().split()]]
