@@ -1,4 +1,1 @@
-S = sorted(input())
-N = int(input())
-
-print(S[(N-1)//len(S)] + S[(N-1)%len(S)])
+[print(l[0][l[1]//len(l[0])]+l[0][l[1]%len(l[0])]) for l in [[sorted(input()),int(input())-1]]]

@@ -1,11 +1,1 @@
-A, B, C, D = map(int, input().split())
-
-a = B/A
-t = D/C
-
-if a == t:
-    print("DRAW")
-elif a > t:
-    print("TAKAHASHI")
-else:
-    print("AOKI")
+[print("DRAW" if l[1]/l[0] == l[3]/l[2] else "TAKAHASHI" if l[1]/l[0] > l[3]/l[2] else "AOKI") for l in [list(map(int, input().split()))]]

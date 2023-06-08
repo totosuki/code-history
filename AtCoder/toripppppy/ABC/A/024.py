@@ -1,6 +1,1 @@
-A, B, C, K = map(int, input().split())
-S, T =  map(int, input().split())
-
-fee = A*S + B*T - (C*(S+T) if S+T >= K else 0)
-
-print(fee)
+[print(l[0][0]*l[1][0] + l[0][1]*l[1][1] - l[0][2]*sum(l[1])*(sum(l[1])>=l[0][3])) for l in [[list(map(int, input().split())) for _ in range(2)]]]
