@@ -1,0 +1,1 @@
+print(*map(lambda l:l[0].upper(),input().split()),sep="")

@@ -1,0 +1,1 @@
+for l in [input().split()]:print("YNEOS"[l[0][-1]!=l[1][0]or l[1][-1]!=l[2][0]::2])

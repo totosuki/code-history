@@ -1,0 +1,1 @@
+for l in[list(map(int,input().split()))]:print("YNeos"[sorted(l)[1]!=l[2]::2])
