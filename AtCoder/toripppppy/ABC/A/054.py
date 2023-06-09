@@ -1,0 +1,1 @@
+[print("A  lD irBcaoewb"[( 1 if  l[0] == l[1] else 2 if l[2].index(l[0]) < l[2].index(l[1]) else 0 )::3].replace(" ","")) for l in [list(map(int, input().split())) + [[*range(2, 14), 1]]]]

@@ -1,10 +1,1 @@
-N = int(input())
-
-if N == 100:
-    print("Perfect")
-elif N >= 90:
-    print("Great")
-elif N >= 60:
-    print("Good")
-else:
-    print("Bad")
+print(dict(zip(range(100,50,-10),f"Perfect|Great{'|Good'*3}".split("|"))).get(int(input())//10*10,"Bad"))

@@ -1,7 +1,1 @@
-import math
-
-W, H = map(int, input().split())
-
-g = math.gcd(W, H)
-
-print(f"{W//g}:{H//g}")
+[print("4:3" if l[0] % 16 or l[1] % 9 else "16:9") for l in [list(map(int, input().split()))]]

@@ -1,10 +1,1 @@
-N, S, T = map(int, input().split())
-
-w = 0
-count = 0
-
-for _ in range(N):
-    w += int(input())
-    if S <= w <= T: count += 1
-
-print(count)
+[[print(sum([l[1]<=sum(j[:i+1])<=l[2] for i in range(l[0])])) for j in [[int(input()) for _ in range(l[0])]]] for l in [list(map(int, input().split()))]]

@@ -1,13 +1,1 @@
-import math
-
-a, b, n = [int(input()) for _ in range(3)]
-
-l = math.lcm(a, b)
-
-r = 0
-
-while True:
-    r += l
-    if r >= n:
-        print(r)
-        break
+exec(f"from math import gcd; [print((l[0]*l[1]//gcd(*l[0:2])) * (l[2]//(l[0]*l[1]//gcd(*l[0:2])) + (l[2]%(l[0]*l[1]//gcd(*l[0:2])) != 0))) for l in [{[int(input()) for _ in range(3)]}]]")
