@@ -1,4 +1,1 @@
-N = int(input())
-a = N / 5
-a = round(a)
-print(a * 5)
+print(round(int(input())/5)*5)

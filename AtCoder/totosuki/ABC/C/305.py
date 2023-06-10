@@ -1,23 +1,23 @@
 H, W = map(int, input().split())
 data = [input() for _ in range(H)]
 a,b,c,d = [],[],[],[]
-phaze = 0
+phase = 0
 
 #find_a
 for row in range(H):
   for col in range(W):
     if data[row][col] == "#":
       a = [row,col]
-      phaze = 1
+      phase = 1
       break
-  if phaze == 1:
+  if phase == 1:
     break
 
 #find_b
 for col in reversed(range(0, W)):
   if data[a[0]][col] == "#":
     b = [a[0], col]
-    phaze = 2
+    phase = 2
     break
 
 #find_c
@@ -25,16 +25,16 @@ for row in reversed(range(H)):
   for col in range(W):
     if data[row][col] == "#":
       c = [row, col]
-      phaze = 3
+      phase = 3
       break
-  if phaze == 3:
+  if phase == 3:
     break
 
 #find_d
 for col in reversed(range(0,W)):
   if data[c[0]][col] == "#":
     d = [c[0], col]
-    phaze = 4
+    phase = 4
     break
 
 # print(a, b, c, d)
