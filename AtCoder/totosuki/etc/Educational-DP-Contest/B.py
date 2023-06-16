@@ -3,17 +3,15 @@ H = list(map(int, input().split()))
 
 def dynamic_programming(H, N, K):
   #Preprocessing
-  start_list = []
   if K > N:
     K = N
+  start_list = [0] * K
   for i in range(K):
     tmp = []
     if i == 0:
-      tmp.append(0)
+      continue
     else:
-      for j in range(i):
-        tmp.append(abs(H[i] - H[j]))
-    start_list.append(min(tmp))
+      start_list[i] = abs(H[0] - H[i])
 
   l = start_list + [0] * (N-K)
   
