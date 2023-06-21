@@ -1,0 +1,1 @@
+print(sum(*[[2**i for i, s in enumerate(l) if s] for l in [list(map(int, input().split()))]]))
