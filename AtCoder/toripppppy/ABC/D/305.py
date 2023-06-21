@@ -4,13 +4,6 @@ N = int(input())
 # 奇数:起床, 偶数:就寝
 log = list(map(int, input().split()))
 
-it = iter(log)
-awake_l = [j-i for i, j in zip(it, it)]
-it = iter(log[1:]+[log[0]])
-sleep_l = [j-i for i, j in zip(it, it)]
-
-print(awake_l, sleep_l)
-
 def get_index(t):
   l = sorted(log + [t+1])
   return l.index(t+1)
@@ -33,8 +26,10 @@ for _ in range(Q):
   l = get_range(ql)
   print(l)
   
-  a = get_range(awake_l)
-  s = get_range(sleep_l)
+  it = iter(l)
+  awake_l = [j-i for i, j in zip(it, it)]
+  it = iter(l[1:]+[l[0]])
+  sleep_l = [j-i for i, j in zip(it, it)]
   
   add = 0
   try:
