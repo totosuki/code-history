@@ -6,16 +6,16 @@ set_grid = set(grid)
 
 s = [s for s in set_grid if s != "."*W]
 
-a = list(map(lambda x: x.count("#"), s))
+l = list(map(lambda x: x.count("#"), s))
 
-answer_line = s[a.index(min(*a))]
-mohan_line = s[a.index(max(*a))]
+answer_line = s[l.index(min(*l))]
+mohan_line = s[l.index(max(*l))]
 
 index = 0
 
 for i, a in enumerate(zip(*map(list, [answer_line,mohan_line]))):
   if len(set(a)) != 1:
-    index = i + 1
+    index = i
     break
 
-print(grid.index(answer_line)+1, index)
+print(grid.index(answer_line)+1, index+1)

@@ -1,0 +1,1 @@
+[[print(l2*2, end="") for l2 in list(l[1])]for l in[[input() for _ in range(2)]]]
