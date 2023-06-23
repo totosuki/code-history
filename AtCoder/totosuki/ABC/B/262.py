@@ -6,13 +6,13 @@ for _ in range(M):
   u -= 1
   v -= 1
   pairs[u][v] = True
-  # pairs[v][u] = True
+  pairs[v][u] = True
 
 rslt = 0
 
 for i in range(N):
-  for j in range(N):
-    for k in range(N):
+  for j in range(i+1, N):
+    for k in range(j+1, N):
       if pairs[i][j] and pairs[j][k] and pairs[k][i]:
         rslt += 1
 
