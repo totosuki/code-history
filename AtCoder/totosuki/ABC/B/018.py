@@ -3,11 +3,5 @@ N = int(input())
 for _ in range(N):
   l, r = map(int, input().split())
   l, r = map(lambda x: x-1, [l,r])
-
-  front = ""
-  back = ""
-  if l != 0: front = S[:l]
-  if r != len()
-
-  S = S[:l] + S[l:r+1:-1] + S[r+1]
+  S = S[:l] + S[l:r+1][::-1] + S[r+1:]
 print(S)
