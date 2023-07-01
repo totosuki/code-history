@@ -8,7 +8,7 @@ for i in range(1, N+1):
 a = []
 
 for s in l:
-    if len(a) == N: break
+    if len()
     if s not in a:
         a.append(s)
 
