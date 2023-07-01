@@ -8,12 +8,19 @@ class DuplicatedObject():
         self.count = count
 
 
+class PokerHand:
+
+    def __init__(self, hand_name: str, highest_number: int) -> None:
+        self.hand_name = hand_name
+        self.highest_number = highest_number
+
+
 class Hand:
 
     def __init__(self, cards: list[Card]) -> None:
         if (len(cards) != 5):
             raise ValueError("len(cards) must be 5")
-        self.cards = cards
+        self.cards = sorted(cards)
 
 
     def get_card_numbers(self):
@@ -45,7 +52,19 @@ class Hand:
 
     def inspect(self):
         # TODO 役を判定
-        pass
+        highest_number = max(self.cards).number
+        prediction = []
+
+        if self.is_flush():
+            prediction.append(PokerHand("flush", highest_number))
+        
+        if self.is_straight():
+            prediction.append(PokerHand("straight", highest_number))
+
+        if self.is_fourcard():
+            prediction.append(PokerHand("fourcard", highest_number))
+
+        return prediction
 
 
     def is_straight(self) -> bool:
@@ -70,18 +89,19 @@ class Hand:
         return dupl.count == 3
     
 
+    def is_onepair(self) -> bool:
+        dupl = self.get_most_duplicated()
+        return dupl.count == 3
+    
+
 
 h = Hand([
-    Card("spade", 10),
-    Card("heart", 10),
-    Card("clover", 10),
-    Card("diamond", 10),
     Card("spade", 14),
+    Card("diamond", 10),
+    Card("spade", 11),
+    Card("spade", 12),
+    Card("spade", 13),
 ])
 
 
-print(h.cards[-1].to_str())
-
-print(h.get_most_duplicated())
-
-print(h.is_fourcard())
+[print(c.to_str(), end=" ") for c in h.cards]

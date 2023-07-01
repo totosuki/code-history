@@ -1,0 +1,1 @@
+for L in [list(map(int,input().split()))]:print("YNeos"[not (min(L) >= 100 and max(L) <= 675 and sorted(L) == L and all(list(map(lambda x: x%25 == 0, L))))::2])
