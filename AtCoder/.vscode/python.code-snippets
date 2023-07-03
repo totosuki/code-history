@@ -1,0 +1,27 @@
+{
+  "Print \"Hello World\"": {
+    "scope": "python",
+    "prefix": "Hello World",
+    "body": "print(\"Hello World\")"
+  },
+  "map(int, input().split())": {
+    "scope": "python",
+    "prefix": "map(int, input().split())",
+    "body": "map(int, input().split())"
+  },
+  "list(map(int, input().split()))": {
+    "scope": "python",
+    "prefix": "list(map(int, input().split()))",
+    "body": "list(map(int, input().split()))"
+  },
+  "[input() for _ in range()]": {
+    "scope": "python",
+    "prefix": "[input() for _ in range(N)]",
+    "body": "[input() for _ in range($1)]"
+  },
+  "[list(map(int, input().split())) for _ in range()]": {
+    "scope": "python",
+    "prefix": "[list(map(int, input().split())) for _ in range()]",
+    "body": "[list(map(int, input().split())) for _ in range($1)]"
+  }
+}
