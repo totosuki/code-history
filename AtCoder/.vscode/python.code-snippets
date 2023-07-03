@@ -23,5 +23,10 @@
     "scope": "python",
     "prefix": "[list(map(int, input().split())) for _ in range()]",
     "body": "[list(map(int, input().split())) for _ in range($1)]"
+  },
+  "print(\"Yes\") for else print(\"No\")": {
+    "scope": "python",
+    "prefix": "print(\"Yes\") for else print(\"No\")",
+    "body": "print(\"Yes\") for $1 else print(\"No\")"
   }
 }
