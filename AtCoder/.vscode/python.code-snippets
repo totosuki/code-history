@@ -33,5 +33,10 @@
     "scope": "python",
     "prefix": "yneos",
     "body": "print(\"Yes\") for $1 else print(\"No\")"
+  },
+  "import sys.stdin.buffer.readline": {
+    "scope": "python",
+    "prefix": "uaua",
+    "body": "import sys\nreadline = sys.stdin.buffer.readline"
   }
 }
