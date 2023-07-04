@@ -32,7 +32,7 @@
   "print(\"Yes\") for else print(\"No\")": {
     "scope": "python",
     "prefix": "yneos",
-    "body": "print(\"Yes\") for $1 else print(\"No\")"
+    "body": "print(\"Yes\") if $1 else print(\"No\")"
   },
   "import sys.stdin.buffer.readline": {
     "scope": "python",
