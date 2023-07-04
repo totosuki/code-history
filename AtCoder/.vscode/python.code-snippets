@@ -19,6 +19,11 @@
     "prefix": "kaka",
     "body": "set(map(int, input().split()))"
   },
+  "tuple(map(int, input().split()))":{
+    "scope": "python",
+    "prefix": "iaia",
+    "body": "tuple(map(int, input().split()))"
+  },
   "[input() for _ in range()]": {
     "scope": "python",
     "prefix": "lala",
@@ -28,6 +33,11 @@
     "scope": "python",
     "prefix": ";a;a",
     "body": "[list(map(int, input().split())) for _ in range($1)]"
+  },
+  "[tuple(map(int, input().split())) for _ in range()]": {
+    "scope": "python",
+    "prefix": "oaoa",
+    "body": "[tuple(map(int, input().split())) for _ in range($1)]"
   },
   "print(\"Yes\") for else print(\"No\")": {
     "scope": "python",
