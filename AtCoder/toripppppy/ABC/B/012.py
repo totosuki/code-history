@@ -1,0 +1,1 @@
+for N in [int(input())]:print(*map(lambda x:str(x).zfill(2),[(N//3600)%24,(N%3600)//60,N%60]),sep=":")

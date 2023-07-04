@@ -1,0 +1,1 @@
+print(*list(reversed(["".join(reversed(input()))for _ in range(4)])),sep="\n")

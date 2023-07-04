@@ -1,0 +1,1 @@
+[print(min(list(map(int,[input() for _ in range(n)])))) for n in [int(input())]]

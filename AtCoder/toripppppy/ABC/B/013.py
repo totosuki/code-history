@@ -1,0 +1,1 @@
+print(*[min(abs(l[1]-l[0]),10-abs(l[1]-l[0]))for l in[[int(input())for _ in range(2)]]])
