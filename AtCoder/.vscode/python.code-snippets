@@ -37,6 +37,6 @@
   "import sys.stdin.buffer.readline": {
     "scope": "python",
     "prefix": "uaua",
-    "body": "import sys\nreadline = sys.stdin.buffer.readline"
+    "body": "import sys\ninput = sys.stdin.buffer.readline"
   }
 }
