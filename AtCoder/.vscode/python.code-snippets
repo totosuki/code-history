@@ -4,6 +4,11 @@
     "prefix": "Hello World",
     "body": "print(\"Hello World\")"
   },
+  "int(input())": {
+    "scope": "python",
+    "prefix": "papa",
+    "body": "int(input())"
+  },
   "map(int, input().split())": {
     "scope": "python",
     "prefix": "haha",
