@@ -53,5 +53,10 @@
     "scope": "python",
     "prefix": "uaua",
     "body": "import sys\ninput = sys.stdin.buffer.readline"
+  },
+  "input().decode().strip()": {
+    "scope": "python",
+    "prefix": "yaya",
+    "body": "input().decode().strip()"
   }
 }
