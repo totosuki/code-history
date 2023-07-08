@@ -1,7 +1,8 @@
-_,A,L,m=input(),map(int,input().split()),[1]+[0]*359,{0}
+(i:=input)()
+A,L,m=map(int,i().split()),[1]+[0]*359,{0}
 r=c=0
 for a in A:r,L[r]=(r+a)%360,1
-print(max([(c:=c*(-l+1)+1)for l in L]))
+print(max((c:=c*(-l+1)+1)for l in L))
 
 # _,A,L,m=input(),map(int,input().split()),[1]+[0]*359,{0}
 # r=c=0
@@ -33,4 +34,4 @@ print(max([(c:=c*(-l+1)+1)for l in L]))
 #   cnt += 1
 #   rslt.append(cnt)
 
-# print(max(rslt))
+# print(max(rslt)
