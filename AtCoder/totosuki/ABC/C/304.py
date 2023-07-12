@@ -1,57 +1,26 @@
-import math
+import sys, collections, math
+input = sys.stdin.buffer.readline
+
 N, D = map(int, input().split())
-pos_li = []
-del_li = []
-infection = []
-count = 0
-
+data = []
 for _ in range(N):
-  pos_li.append(list(map(int, input().split())))
+  X, Y = map(int, input().split())
+  data.append([X, Y])
 
-infection.append(pos_li[0])
+status = [False] * N
+status[0] = True
 
-while True:
-  for i, pos in enumerate(pos_li):
-    for inf_pos in infection:
-      dis = math.sqrt((inf_pos[0] - pos_li[i][0])**2 + (inf_pos[1] - pos_li[i][1])**2)
-      if D - dis >= 0:
-        infection.append(pos_li[i])
-        count += 1
-        break
-    if D - dis < 0:
-      pass
-  if count >= N:
-    break
+queue = collections.deque([data.pop(0)])
 
-for pos in pos_li:
-  for inf_pos in infection:
-    if pos == inf_pos:
-      print("Yes")
-      break
-  if pos != inf_pos:
-    print("No")
+while len(queue):
+  x, y = queue.popleft()
 
+  for i in range(len(data)):
+    nx, ny = data[i]
+    dist = math.sqrt((x-nx)**2 + (y-ny)**2)
+    if (dist <= D) and (status[i] == False):
+      status[i] = True
+      queue.append(data.pop(i))
 
-# for i, pos in enumerate(pos_li):
-#   for inf_pos in infection:
-#     dis = math.sqrt((inf_pos[0] - pos_li[i][0])**2 + (inf_pos[1] - pos_li[i][1])**2)
-#     if D - dis >= 0:
-#       infection.append(pos_li[i])
-#       break
-#   if D - dis < 0:
-#     pass
-
-
-# for i, pos in enumerate(pos_li):
-#   for pos_2 in pos_li:
-#     if pos == pos_2:
-#       continue
-    
-#     dis = math.sqrt((pos[0] - pos_2[0])**2 + (pos[1] - pos_2[1])**2)
-#     if D - dis >= 0:
-#       print(f"pos: {pos}, pos_2: {pos_2}, dis: {dis}")
-#       print("Yes")
-#       break
-#   if D - dis < 0:
-#     print("No")
-#     del_li.append(pos_li.index(pos_li[i]))
+for i in range(N):
+  print("Yes") if status[i] else print("No")
