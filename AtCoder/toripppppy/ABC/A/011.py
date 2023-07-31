@@ -1,1 +1,1 @@
-print(int(input()) % 12 + 1)
+print(int(input())%12+1)
