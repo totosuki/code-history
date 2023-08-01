@@ -32,15 +32,7 @@ def get_number(driver: webdriver.Chrome) -> int:
   value = elem.get_attribute("href")
   
   match = re.search(r"abc(\d+)", value)
-  if match:
-    number = match.group(1)
-    try:
-      number = int(number)
-      return number
-    except ValueError:
-      return None
-  else:
-    None
+  return match.group(1)
 
 def main():
   driver = start()
