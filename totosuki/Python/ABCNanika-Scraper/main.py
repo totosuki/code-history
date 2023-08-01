@@ -20,19 +20,19 @@ def start():
   driver.get(URL + PROBLEMS)
   return driver
 
+def extract_string(pattern, text):
+  match = re.search(pattern, text)
+  return match.group(1)
+
 def get_date(driver: webdriver.Chrome) -> str:
   elem = driver.find_element(By.XPATH, DATE_PATH)
   value = elem.text
-  
-  match = re.search(r'(\d{4}-\d{2}-\d{2})', value)
-  return match.group(1)
+  return extract_string(r'(\d{4}-\d{2}-\d{2})', value)
 
 def get_number(driver: webdriver.Chrome) -> int:
   elem = driver.find_element(By.XPATH, PROB_URL_PATH)
   value = elem.get_attribute("href")
-  
-  match = re.search(r"abc(\d+)", value)
-  return match.group(1)
+  return extract_string(r"abc(\d+)", value)
 
 def main():
   driver = start()
