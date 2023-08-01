@@ -19,7 +19,7 @@ def start():
   driver.get(URL + PROBLEMS)
   return driver
 
-def get_number(driver) -> int:
+def get_number(driver: webdriver.Chrome) -> int:
   elem = driver.find_element(By.XPATH, PROB_URL_PATH)
   value = elem.get_attribute("href")
   
