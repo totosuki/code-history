@@ -36,7 +36,7 @@ def get_number(driver: webdriver.Chrome) -> int:
 
 def main():
   driver = start()
-  time.sleep(5)
+  time.sleep(3)
   date = get_date(driver)
   number = get_number(driver)
   print(date)
