@@ -14,11 +14,13 @@ URL = url.replace(STANDINGS,"").replace(PROBLEMS, "")
 DATE_PATH = "//table[@class='mb-0 table']/tbody/tr/td"
 PROB_URL_PATH = "//table[@class='table table-sm table-bordered table-striped']/tbody/tr/td/a[@href]"
 
-def start():
+def get_driver():
   options = Options()
-  driver = webdriver.Chrome(options=options)
-  driver.get(URL + PROBLEMS)
-  return driver
+  driver_pr = webdriver.Chrome(options=options)
+  driver_st = webdriver.Chrome(options=options)
+  driver_pr.get(URL + PROBLEMS)
+  driver_st.get(URL + STANDINGS)
+  return (driver_pr, driver_st)
 
 def extract_string(pattern, text):
   match = re.search(pattern, text)
@@ -35,10 +37,10 @@ def get_number(driver: webdriver.Chrome) -> int:
   return extract_string(r"abc(\d+)", value)
 
 def main():
-  driver = start()
+  driver_pr, driver_st = get_driver()
   time.sleep(3)
-  date = get_date(driver)
-  number = get_number(driver)
+  date = get_date(driver_pr)
+  number = get_number(driver_pr)
   print(date)
   print(number)
 
