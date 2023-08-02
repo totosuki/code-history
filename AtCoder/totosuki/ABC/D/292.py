@@ -5,7 +5,8 @@ class UnionFind():
   def __init__(self, n):
     self.n = n
     self.parents = [-1] * n
-
+    self.edge = [0] * n
+  
   def find(self, x):
     if self.parents[x] < 0:
       return x
@@ -18,6 +19,7 @@ class UnionFind():
     y = self.find(y)
     
     if x == y:
+      self.edge[x] += 1
       return
     
     if self.parents[x] > self.parents[y]:
@@ -25,6 +27,7 @@ class UnionFind():
     
     self.parents[x] += self.parents[y]
     self.parents[y] = x
+    self.edge[x] += 1
   
   def size(self, x):
     return -self.parents[self.find(x)]
@@ -53,9 +56,16 @@ class UnionFind():
 
 N, M = map(int, input().split())
 uf = UnionFind(N)
+answer = "Yes"
 
-print("")
+# Union
 for _ in range(M):
-  u, v = map(int, input().split())
-  uf.union(u-1, v-1)
-  print(u, uf.find(u-1))
+  u, v = map(lambda x: int(x) - 1, input().split())
+  uf.union(u, v)
+
+# Check
+for i in range(N):
+  if uf.edge[uf.find(i)] != uf.size(i):
+    answer = "No"
+
+print(answer)
