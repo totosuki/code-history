@@ -13,6 +13,7 @@ STANDINGS = "?activeTab=Standings"
 URL = url.replace(STANDINGS,"").replace(PROBLEMS, "")
 DATE_PATH = "//table[@class='mb-0 table']/tbody/tr/td"
 PROB_URL_PATH = "//table[@class='table table-sm table-bordered table-striped']/tbody/tr/td/a[@href]"
+PARTICIPANT_PATH = "//table[@class='table table-sm table-bordered table-striped']/tbody/tr/th[@class='text-left align-middle']/span/a"
 
 def get_driver():
   options = Options()
