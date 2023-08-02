@@ -57,6 +57,6 @@
   "input().decode().strip()": {
     "scope": "python",
     "prefix": "yaya",
-    "body": "input().decode().strip()"
+    "body": "input().decode().rstrip()"
   }
 }
