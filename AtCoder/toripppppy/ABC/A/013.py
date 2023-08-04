@@ -1,1 +1,1 @@
-print(list("ABCDE").index(input()) + 1)
+print("_ABCDE".index(input()))

@@ -1,0 +1,1 @@
+[[print("YNeos"[(k-l)%2 or l>k::2]) for l in [sum(list(map(int, str(__import__("numpy").base_repr(n, base=3)))))]] for n,k in [map(int,i.split())for i in open(0)][1:]]
