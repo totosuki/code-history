@@ -1,47 +1,20 @@
-import sys, statistics
+import sys
 input = sys.stdin.buffer.readline
 
 N = int(input())
 A = list(map(int, input().split()))
-mid = int(statistics.mean(A))
+sm = sum(A)
+X = sm // N
+R = sm % N
 rslt = 0
 
-for i in A:
-  rslt += abs(mid - a)
+A.sort(reverse = True)
 
-print(rslt // 2)
+for a in A:
+  if R > 0:
+    R -= 1
+    rslt += abs(a - (X+1))
+  else:
+    rslt += abs(a - X)
 
-# dict = defaultdict(int)
-# cnt = 0
-
-# # dict設定
-# for a in A:
-#   dict[a] += 1
-
-# keys = dict.keys()
-# mx = max(keys)
-# mn = min(keys)
-
-# while True:
-#   # max
-#   if dict[mx] != 0:
-#     dict[mx] -= 1
-#     dict[mx-1] += 1
-#   else:
-#     mx -= 1
-#     dict[mx] -= 1
-#     dict[mx-1] += 1
-#   # min
-#   if dict[mn] != 0:
-#     dict[mn] -= 1
-#     dict[mn + 1] += 1
-#   else:
-#     mn += 1
-#     dict[mn] -= 1
-#     dict[mn + 1] += 1
-#   if mx - mn <= 1:
-#     break
-#   else:
-#     cnt += 1
-
-# print(cnt)
+print(rslt//2)
