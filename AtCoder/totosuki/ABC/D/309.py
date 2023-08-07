@@ -1,74 +1,51 @@
-import sys
+import sys; from collections import defaultdict, deque
 input = sys.stdin.buffer.readline
 
-from collections import defaultdict
-
-class UnionFind():
-    def __init__(self, n):
-        self.n = n
-        self.parents = [-1] * n
-
-    def find(self, x):
-        if self.parents[x] < 0:
-            return x
-        else:
-            self.parents[x] = self.find(self.parents[x])
-            return self.parents[x]
-
-    def union(self, x, y):
-        x = self.find(x)
-        y = self.find(y)
-
-        if x == y:
-            return
-
-        if self.parents[x] > self.parents[y]:
-            x, y = y, x
-
-        self.parents[x] += self.parents[y]
-        self.parents[y] = x
-
-    def size(self, x):
-        return -self.parents[self.find(x)]
-
-    def same(self, x, y):
-        return self.find(x) == self.find(y)
-
-    def members(self, x):
-        root = self.find(x)
-        return [i for i in range(self.n) if self.find(i) == root]
-
-    def roots(self):
-        return [i for i, x in enumerate(self.parents) if x < 0]
-
-    def group_count(self):
-        return len(self.roots())
-
-    def all_group_members(self):
-        group_members = defaultdict(list)
-        for member in range(self.n):
-            group_members[self.find(member)].append(member)
-        return group_members
-
-    def __str__(self):
-        return '\n'.join(f'{r}: {m}' for r, m in self.all_group_members().items())
-
 N1, N2, M = map(int, input().split())
-uf_1 = UnionFind(N1)
-uf_2 = UnionFind(N2)
+d1 = defaultdict(list)
+d2 = defaultdict(list)
 
 for _ in range(M):
-  a, b = map(int, input().split())
-
-  if a <= N1:
-    uf_1.union(a-1, b-1)
+  u, v = map(int, input().split())
+  if u <= N1:
+    d1[u].append(v)
+    d1[v].append(u)
   else:
-    uf_2.union(a-N1-1, b-N1-1)
+    d2[u].append(v)
+    d2[v].append(u)
 
-print(uf_1)
-print(uf_2)
-print(uf_1.parents)
-print(uf_2.parents)
+# N1 BFS
+queue_1 = deque()
+queue_1.appendleft(1)
+ok_1 = [-1] * N1
+ok_1[0] = 0
 
-# 一重forループ数のみで4,5回が限度？
-# 要は1からの距離を算出出来るようにすれば良いのか
+while len(queue_1):
+  search = queue_1.pop()
+  cnt = ok_1[search -1]
+  
+  next = d1[search]
+  for n in next:
+    n_cnt = ok_1[n-1]
+    if n_cnt == -1:
+      ok_1[n-1] = cnt + 1
+      queue_1.appendleft(n)
+
+# N2 BFS
+queue_2 = deque()
+queue_2.appendleft(N1+N2)
+ok_2 = [-1] * (N1+N2)
+ok_2[N1+N2-1] = 0
+
+while len(queue_2):
+  search = queue_2.pop()
+  cnt = ok_2[search -1]
+  
+  next = d2[search]
+  for n in next:
+    n_cnt = ok_2[n-1]
+    if n_cnt == -1:
+      ok_2[n-1] = cnt + 1
+      queue_2.appendleft(n)
+
+print(max(ok_1) + max(ok_2) + 1)
