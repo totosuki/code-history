@@ -1,9 +1,8 @@
-# 130byte
-# i="map(int,input().split())"
-# N,D,P=eval(i)
-# F=list(eval(i))
-# F.sort(reverse=1)
-# print(sum(min(P,sum(F[i:i+D]))for i in range(0,N,D)))
+# 124byte
+i="map(int,input().split())"
+N,D,P=eval(i)
+F=sorted(eval(i),reverse=1)
+print(sum(min(P,sum(F[i:i+D]))for i in range(0,N,D)))
 
 # import sys
 # input = sys.stdin.buffer.readline
