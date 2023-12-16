@@ -38,8 +38,8 @@ Cloneしたローカルリポジトリに、アーカイブ化したいファイ
   - takahashi
     - ABC
       - A
-        004.py
-        999.py
+        - 004.py
+        - 999.py
       - B
         - 999.py
     - ARC
