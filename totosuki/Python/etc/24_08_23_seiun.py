@@ -56,6 +56,10 @@ choose1_color = Axis(790, 540)
 choose2_color = Axis(1080, 540)
 choose3_color = Axis(1360, 540)
 
+gold = Color(89, 64, 36)
+blue = Color(62, 76, 98)
+green = Color(63, 84, 67)
+
 positions = {
   update,
   update_yes,
