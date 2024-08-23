@@ -10,11 +10,15 @@ min = Axis(0, 0)
 max = Axis(1440, 900)
 update = Axis(980, 730)
 update_yes = Axis(900, 585)
+diff = Axis(90, -145)
 pack1 = Axis(960, 600)
 pack2 = Axis(1040, 660)
 pack3 = Axis(1120, 600)
 pack4 = Axis(1200, 660)
-buydiff = Axis(90, -145)
+pack1_buy = Axis(pack1.x + diff.x, pack1.y + diff.y)
+pack2_buy = Axis(pack2.x + diff.x, pack2.y + diff.y)
+pack3_buy = Axis(pack3.x + diff.x, pack3.y + diff.y)
+pack4_buy = Axis(pack4.x + diff.x, pack4.y + diff.y)
 choose = Axis(1035, 720)
 itemlast = Axis(1350, 400)
 sell = Axis(1030, 675)
@@ -26,7 +30,10 @@ positions = {
   pack2,
   pack3,
   pack4,
-  buydiff,
+  pack1_buy,
+  pack2_buy,
+  pack3_buy,
+  pack4_buy,
   choose,
   itemlast,
   sell
@@ -47,10 +54,11 @@ def main(N):
   for _ in range(N):
     sleep_exec(pag.click(update.x, update.y))
     sleep_exec(pag.click(update_yes.x, update_yes.y), 0.5)
-    sleep_exec(pag.click(pack1.x, pack1.y))
-    sleep_exec(pag.click(pack1.x + buydiff.x, pack1.y + buydiff.y))
-    sleep_exec(pag.click(choose.x, choose.y), 1.5)
-    sleep_exec(pag.click(itemlast.x, itemlast.y))
-    sleep_exec(pag.click(sell.x, sell.y), 0.5)
+    for pack in [pack1, pack2, pack3, pack4]:
+      sleep_exec(pag.click(pack.x, pack.y))
+      sleep_exec(pag.click(pack.x + diff.x, pack.y + diff.y))
+      sleep_exec(pag.click(choose.x, choose.y), 1.5)
+      sleep_exec(pag.click(itemlast.x, itemlast.y))
+      sleep_exec(pag.click(sell.x, sell.y), 0.5)
 
-main()
+main(2)
