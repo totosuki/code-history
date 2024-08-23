@@ -1,4 +1,5 @@
 from collections import defaultdict, deque
+from time import perf_counter
 
 input_csv_path = "./src/input_p1_c3.csv"
 output_csv_path = "./src/output_p1_c3.csv"
@@ -60,7 +61,10 @@ def write_data(ans):
 
 def main():
   data = get_data()
+  st = perf_counter()
   ans = solve(data)
+  et = perf_counter()
+  print(f"Time: {et - st} sec")
   write_data(ans)
 
 main()
