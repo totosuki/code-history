@@ -38,6 +38,10 @@ choose = Axis(750, 720)
 itemlast = Axis(1350, 400)
 sell = Axis(1030, 675)
 
+choose1_color = Axis(790, 540)
+choose2_color = Axis(1080, 540)
+choose3_color = Axis(1360, 540)
+
 positions = {
   update,
   update_yes,
