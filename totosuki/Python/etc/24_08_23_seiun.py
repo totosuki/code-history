@@ -23,7 +23,8 @@ class Color:
   
   def __eq__(self, other):
     if isinstance(other, Color):
-      return self.r == other.r and self.g == other.g and self.b == other.b
+      diff = abs(self.r - other.r) + abs(self.g - other.g) + abs(self.b - other.b)
+      return diff < 5
     return False
   
   def __hash__(self):
