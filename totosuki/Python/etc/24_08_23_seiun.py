@@ -15,6 +15,20 @@ class Axis:
   def __hash__(self):
     return hash((self.x, self.y))
 
+class Color:
+  def __init__(self, r: int, g: int, b: int):
+    self.r = r
+    self.g = g
+    self.b = b
+  
+  def __eq__(self, other):
+    if isinstance(other, Color):
+      return self.r == other.r and self.g == other.g and self.b == other.b
+    return False
+  
+  def __hash__(self):
+    return hash((self.r, self.g, self.b))
+
 try:
   looptime = int(sys.argv[1])
 except:
