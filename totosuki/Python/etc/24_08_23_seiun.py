@@ -15,6 +15,12 @@ class Axis:
   def __hash__(self):
     return hash((self.x, self.y))
 
+try:
+  looptime = int(sys.argv[1])
+except:
+  print("The number of loop times must be entered as a command line argument.")
+  exit()
+
 min = Axis(0, 0)
 max = Axis(1440, 900)
 update = Axis(980, 730)
@@ -70,8 +76,4 @@ def main(N):
       click(itemlast.x, itemlast.y)
       click(sell.x, sell.y, 0.5)
 
-try:
-  main(int(sys.argv[1]))
-except:
-  print("The number of loop times must be entered as a command line argument.")
-  exit()
+main(looptime)
