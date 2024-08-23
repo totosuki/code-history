@@ -70,4 +70,8 @@ def main(N):
       click(itemlast.x, itemlast.y)
       click(sell.x, sell.y, 0.5)
 
-main(int(sys.argv[1]))
+try:
+  main(int(sys.argv[1]))
+except:
+  print("The number of loop times must be entered as a command line argument.")
+  exit()
