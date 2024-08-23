@@ -34,7 +34,7 @@ pack1_buy = Axis(pack1.x + diff.x, pack1.y + diff.y)
 pack2_buy = Axis(pack2.x + diff.x, pack2.y + diff.y)
 pack3_buy = Axis(pack3.x + diff.x, pack3.y + diff.y)
 pack4_buy = Axis(pack4.x + diff.x, pack4.y + diff.y)
-choose = Axis(1035, 720)
+choose = Axis(750, 720)
 itemlast = Axis(1350, 400)
 sell = Axis(1030, 675)
 
