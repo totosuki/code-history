@@ -5,6 +5,14 @@ class Axis:
   def __init__(self, x: int, y: int):
     self.x = x
     self.y = y
+  
+  def __eq__(self, other):
+    if isinstance(other, Axis):
+      return self.x == other.x and self.y == other.y
+    return False
+  
+  def __hash__(self):
+    return hash((self.x, self.y))
 
 min = Axis(0, 0)
 max = Axis(1440, 900)
@@ -44,21 +52,21 @@ def check_stop(x, y):
   if pos not in positions:
     exit()
 
-def sleep_exec(function, waittime = 1):
+def click(x, y, waittime = 1):
   time.sleep(waittime)
   check_stop(*pag.position())
-  function()
+  pag.click(x, y)
 
 def main(N):
   pag.click(update.x, update.y)
   for _ in range(N):
-    sleep_exec(pag.click(update.x, update.y))
-    sleep_exec(pag.click(update_yes.x, update_yes.y), 0.5)
+    click(update.x, update.y)
+    click(update_yes.x, update_yes.y, 0.5)
     for pack in [pack1, pack2, pack3, pack4]:
-      sleep_exec(pag.click(pack.x, pack.y))
-      sleep_exec(pag.click(pack.x + diff.x, pack.y + diff.y))
-      sleep_exec(pag.click(choose.x, choose.y), 1.5)
-      sleep_exec(pag.click(itemlast.x, itemlast.y))
-      sleep_exec(pag.click(sell.x, sell.y), 0.5)
+      click(pack.x, pack.y)
+      click(pack.x + diff.x, pack.y + diff.y, 0.5)
+      click(choose.x, choose.y, 1.5)
+      click(itemlast.x, itemlast.y)
+      click(sell.x, sell.y, 0.5)
 
 main(2)
