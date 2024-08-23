@@ -1,5 +1,6 @@
 import pyautogui as pag
 import time
+import sys
 
 class Axis:
   def __init__(self, x: int, y: int):
@@ -69,4 +70,4 @@ def main(N):
       click(itemlast.x, itemlast.y)
       click(sell.x, sell.y, 0.5)
 
-main(2)
+main(int(sys.argv[1]))
