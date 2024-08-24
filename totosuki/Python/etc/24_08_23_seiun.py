@@ -92,24 +92,24 @@ def click(x, y, waittime = 1):
   pag.click(x, y)
 
 def choose_pack():
-  time.sleep(2)
+  time.sleep(1.75)
   rank = [] # gold : 2, blue : 1, green : 0
   for pos in choose_colors:
     color = Color(*pag.pixel(pos.x * 2, pos.y * 2))
     rank.append(colors.index(color))
   choose = chooses[rank.index(max(rank))]
-  click(choose.x, choose.y)
+  click(choose.x, choose.y, 0.1)
 
 def main(N):
   pag.click(update.x, update.y)
   for _ in range(N):
-    click(update.x, update.y)
-    click(update_yes.x, update_yes.y, 0.5)
+    click(update.x, update.y, 0.40)
+    click(update_yes.x, update_yes.y, 0.25)
     for pack in [pack1, pack2, pack3, pack4]:
-      click(pack.x, pack.y)
-      click(pack.x + diff.x, pack.y + diff.y, 0.5)
+      click(pack.x, pack.y, 0.40)
+      click(pack.x + diff.x, pack.y + diff.y, 0.25)
       choose_pack()
-      click(itemlast.x, itemlast.y)
-      click(sell.x, sell.y, 0.5)
+      click(itemlast.x, itemlast.y, 1.25)
+      click(sell.x, sell.y, 0.25)
 
 main(looptime)
