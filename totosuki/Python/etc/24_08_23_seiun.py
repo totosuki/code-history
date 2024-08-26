@@ -109,7 +109,7 @@ def main(N):
   pag.click(update.x, update.y)
   for _ in range(N):
     click(update.x, update.y, 0.4)
-    click(update_yes.x, update_yes.y, 0.25)
+    click(update_yes.x, update_yes.y, 0.3)
     for pack in [pack1, pack2, pack3, pack4, pack5]:
       click(pack.x, pack.y, 0.5)
       click(pack.x + diff.x, pack.y + diff.y, 0.25)
