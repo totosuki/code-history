@@ -1,6 +1,7 @@
 import pyautogui as pag
 import time
 import sys
+import os
 
 class Axis:
   def __init__(self, x: int, y: int):
@@ -39,14 +40,16 @@ except:
 update = Axis(980, 730)
 update_yes = Axis(900, 585)
 diff = Axis(90, -145)
-pack1 = Axis(960, 600)
-pack2 = Axis(1040, 660)
-pack3 = Axis(1120, 600)
-pack4 = Axis(1200, 660)
+pack1 = Axis(920, 600)
+pack2 = Axis(1000, 660)
+pack3 = Axis(1080, 600)
+pack4 = Axis(1160, 660)
+pack5 = Axis(1240, 600)
 pack1_buy = Axis(pack1.x + diff.x, pack1.y + diff.y)
 pack2_buy = Axis(pack2.x + diff.x, pack2.y + diff.y)
 pack3_buy = Axis(pack3.x + diff.x, pack3.y + diff.y)
 pack4_buy = Axis(pack4.x + diff.x, pack4.y + diff.y)
+pack5_buy = Axis(pack5.x + diff.x, pack5.y + diff.y)
 choose1 = Axis(750, 720)
 choose2 = Axis(1035, 720)
 choose3 = Axis(1315, 720)
@@ -70,10 +73,12 @@ positions = {
   pack2,
   pack3,
   pack4,
+  pack5,
   pack1_buy,
   pack2_buy,
   pack3_buy,
   pack4_buy,
+  pack5_buy,
   choose1,
   choose2,
   choose3,
@@ -98,18 +103,19 @@ def choose_pack():
     color = Color(*pag.pixel(pos.x * 2, pos.y * 2))
     rank.append(colors.index(color))
   choose = chooses[rank.index(max(rank))]
-  click(choose.x, choose.y)
+  click(choose.x, choose.y, 0.1)
 
 def main(N):
   pag.click(update.x, update.y)
   for _ in range(N):
-    click(update.x, update.y)
-    click(update_yes.x, update_yes.y, 0.5)
-    for pack in [pack1, pack2, pack3, pack4]:
-      click(pack.x, pack.y)
-      click(pack.x + diff.x, pack.y + diff.y, 0.5)
+    click(update.x, update.y, 0.4)
+    click(update_yes.x, update_yes.y, 0.3)
+    for pack in [pack1, pack2, pack3, pack4, pack5]:
+      click(pack.x, pack.y, 0.5)
+      click(pack.x + diff.x, pack.y + diff.y, 0.25)
       choose_pack()
-      click(itemlast.x, itemlast.y)
-      click(sell.x, sell.y, 0.5)
+      click(itemlast.x, itemlast.y, 1.25)
+      click(sell.x, sell.y, 0.25)
+  os.system('afplay /System/Library/Sounds/Glass.aiff')
 
 main(looptime)
